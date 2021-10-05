@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.example.exemplorecyclerview.adapter.CarroListAdapter;
+
 public class MainActivity extends AppCompatActivity {
 
     ViewHolder mViewHolder = new ViewHolder();
