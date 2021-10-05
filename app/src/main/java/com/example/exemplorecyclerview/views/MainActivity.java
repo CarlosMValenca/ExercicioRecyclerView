@@ -1,4 +1,4 @@
-package com.example.exemplorecyclerview;
+package com.example.exemplorecyclerview.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -6,7 +6,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.example.exemplorecyclerview.R;
 import com.example.exemplorecyclerview.adapter.CarroListAdapter;
+import com.example.exemplorecyclerview.data.CarroMock;
+import com.example.exemplorecyclerview.model.Carro;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,8 +25,12 @@ public class MainActivity extends AppCompatActivity {
 
         mViewHolder.rv_carros = findViewById(R.id.rv_carros);
 
+        CarroMock carroMock = new CarroMock();
+        List<Carro> listaCarros = new ArrayList<>();
+        listaCarros.addAll(carroMock.getListaCarros());
+
         //adapter
-        CarroListAdapter carroListAdapter = new CarroListAdapter();
+        CarroListAdapter carroListAdapter = new CarroListAdapter(listaCarros);
         mViewHolder.rv_carros.setAdapter(carroListAdapter);
 
         //layout
